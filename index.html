@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Greek gods</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
+<style> body {background-image: url('images/background.jpg');}</style>
 <body>
-    <div id="plot"></div>
-    <script src="data.js"></script>
-    <script src="plots.js"></script>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center;" style="background-color:seashell" >
+        <h1 style="text-align:left;">Belly Button Biodiversity Dashboard</h1>
+        <img src="images/jumbotronbacteria.jpg" alt="bacteria" class="center">
+        <h2 style="text-align:left;">Use the interactive charts below to explore the dataset</h2>
+        <h2><ul>
+          <li><a href="#bubble">Bubble</a></li>
+          <li><a href="#gauge">Gauge</a></li>
+          <li><a href="#barh">Bar</a></li>
+        </ul>
+      </h2>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <h2><b>Based on the ID of the person who provided the sample, one can tell the top 10 cultures found.</b></h2>
+        <div id="barh"></div>
+      </div>
+      <div class="col-md-5">
+        <h2><b>This graph shows the frequency of naval area cleaning in relation to bacteria samples.</b></h2>
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2><b>This graph shows the abundance of bacteria per sample collected.</b></h2>
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+ 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="charts.js"></script>
+<script src="samples1.json"></script>
+
+
 </html>
